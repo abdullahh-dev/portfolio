@@ -45,8 +45,8 @@ const Navbar = () => {
   return (
     <nav>
       <div
-        // style={{ WebkitBorderRadius: "12px", borderRadius: "12px" }}
-        className="bottom-[4%] z-[1000] flex fixed cst-md:hidden flex-col p-1 right-[2%] overflow-hidden border-[0.1px] border-[#181818]  backdrop-blur-[2px] rounded-[12px]"
+        style={{ WebkitBorderRadius: "12px" }}
+        className="bottom-[4%] z-[1000] flex fixed cst-md:hidden flex-col outline outline-1 outline-offset-0 outline-[#151515] p-1 right-[2%] overflow-hidden  backdrop-blur-[2px] rounded-[12px]"
       >
         <div
           className={`transition-height duration-1000 flex flex-col items-center gap-5 overflow-hidden`}
