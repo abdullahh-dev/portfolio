@@ -45,7 +45,7 @@ const CustomCursor = () => {
 
   return (
     <div
-      className="custom-cursor fixed w-5 h-5 bg-[#ffffff]/5 backdrop-blur-sm border border-[#2a2a2a]  rounded-full z-50
+      className="custom-cursor hidden md:block fixed w-5 h-5 bg-[#ffffff]/5 backdrop-blur-sm border border-[#2a2a2a]  rounded-full z-50
                 duration-75"
     ></div>
   );

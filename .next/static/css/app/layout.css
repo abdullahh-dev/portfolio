@@ -723,10 +723,6 @@ video {
 .text-\[14px\] {
   font-size: 14px;
 }
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
 .font-medium {
   font-weight: 500;
 }
@@ -810,6 +806,13 @@ body {
   .sm\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .md\:block {
+    display: block;
   }
 }
 
