@@ -44,7 +44,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="bottom-24 flex fixed cst-md:hidden flex-col p-1 outline outline-1 outline-offset-0 outline-[#151515] right-6   backdrop-blur-[2px] rounded-[12px]">
+      <div className="bottom-24 flex fixed cst-md:hidden flex-col p-1 outline outline-1 outline-offset-0 outline-[#151515] right-6 overflow-hidden  backdrop-blur-[2px] rounded-[12px]">
         <div
           className={`transition-height duration-1000 flex flex-col items-center gap-5 overflow-hidden`}
         >
