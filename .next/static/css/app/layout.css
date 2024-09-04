@@ -569,23 +569,17 @@ video {
 .fixed {
   position: fixed;
 }
-.bottom-24 {
-  bottom: 6rem;
+.bottom-\[4\%\] {
+  bottom: 4%;
 }
 .left-10 {
   left: 2.5rem;
 }
-.right-6 {
-  right: 1.5rem;
-}
-.top-56 {
-  top: 14rem;
-}
 .right-\[2\%\] {
   right: 2%;
 }
-.bottom-\[4\%\] {
-  bottom: 4%;
+.top-56 {
+  top: 14rem;
 }
 .z-50 {
   z-index: 50;
@@ -605,8 +599,8 @@ video {
 .h-\[100vh\] {
   height: 100vh;
 }
-.h-\[60px\] {
-  height: 60px;
+.h-\[45px\] {
+  height: 45px;
 }
 .h-full {
   height: 100%;
@@ -614,29 +608,17 @@ video {
 .h-screen {
   height: 100vh;
 }
-.h-\[40px\] {
-  height: 40px;
-}
-.h-\[45px\] {
-  height: 45px;
-}
 .min-h-screen {
   min-height: 100vh;
 }
 .w-5 {
   width: 1.25rem;
 }
-.w-\[80px\] {
-  width: 80px;
+.w-\[65px\] {
+  width: 65px;
 }
 .w-full {
   width: 100%;
-}
-.w-\[60px\] {
-  width: 60px;
-}
-.w-\[65px\] {
-  width: 65px;
 }
 .max-w-\[500px\] {
   max-width: 500px;
@@ -680,23 +662,14 @@ video {
 .justify-center {
   justify-content: center;
 }
-.gap-4 {
-  gap: 1rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 .gap-5 {
   gap: 1.25rem;
 }
-.gap-3 {
-  gap: 0.75rem;
-}
-.gap-2 {
-  gap: 0.5rem;
-}
 .overflow-hidden {
   overflow: hidden;
-}
-.rounded-\[12px\] {
-  border-radius: 12px;
 }
 .rounded-\[6px\] {
   border-radius: 6px;
@@ -704,12 +677,26 @@ video {
 .rounded-full {
   border-radius: 9999px;
 }
+.rounded-\[12px\] {
+  border-radius: 12px;
+}
 .border {
   border-width: 1px;
+}
+.border-\[0\.1px\] {
+  border-width: 0.1px;
 }
 .border-\[\#2a2a2a\] {
   --tw-border-opacity: 1;
   border-color: rgb(42 42 42 / var(--tw-border-opacity));
+}
+.border-\[black\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+.border-\[\#181818\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(24 24 24 / var(--tw-border-opacity));
 }
 .bg-\[\#252525\] {
   --tw-bg-opacity: 1;
@@ -743,10 +730,6 @@ video {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
 .text-\[14px\] {
   font-size: 14px;
 }
@@ -770,18 +753,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.outline {
-  outline-style: solid;
-}
-.outline-1 {
-  outline-width: 1px;
-}
-.outline-offset-0 {
-  outline-offset: 0px;
-}
-.outline-\[\#151515\] {
-  outline-color: #151515;
 }
 .backdrop-blur-\[2px\] {
   --tw-backdrop-blur: blur(2px);
@@ -814,7 +785,7 @@ video {
 body {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   color: #d0d6e0;
   background-color: #08090a;
   width: 100%;
