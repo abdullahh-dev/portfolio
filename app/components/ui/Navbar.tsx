@@ -2,49 +2,43 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import AddSharpIcon from "@mui/icons-material/AddSharp";
-import {
-  AddBoxOutlined,
-  ContactMail,
-  Home,
-  SettingsVoiceSharp,
-  Work,
-} from "@mui/icons-material";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
   const path = usePathname();
   const NavLinks = [
-    { id: 1, name: "Home", path: "/", icon: <Home fontSize="large" /> },
+    { id: 1, name: "Home", path: "/" },
     {
       id: 2,
       name: "About",
       path: "/about",
-      icon: <AddBoxOutlined fontSize="large" />,
     },
     {
       id: 3,
       name: "Services",
       path: "/services",
-      icon: <SettingsVoiceSharp fontSize="large" />,
     },
     {
       id: 4,
       name: "Projects",
       path: "/projects",
-      icon: <Work fontSize="large" />,
     },
     {
       id: 5,
       name: "Contact",
       path: "/contact",
-      icon: <ContactMail fontSize="medium" />,
     },
   ];
 
   return (
     <nav>
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        drag
+        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+        draggable
+        whileDrag={{ scale: 1.2, animation: "step-end" }}
         style={{ WebkitBorderRadius: "12px" }}
         className="bottom-[4%] z-[1000] flex fixed cst-md:hidden flex-col border border-[#151515] p-1 right-[2%] overflow-hidden  backdrop-blur-[12px] rounded-[12px]"
       >
@@ -67,7 +61,7 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
       <ul className="hidden cst-md:flex flex-col fixed top-56 left-10">
         {NavLinks.map((n, i) => (
           <li

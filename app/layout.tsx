@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/ui/Navbar";
 import CustomCursor from "./components/ui/CustomCursor";
+import { useRef } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
