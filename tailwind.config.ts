@@ -1,23 +1,6 @@
 import type { Config } from "tailwindcss";
-import { PluginAPI } from "tailwindcss/types/config";
-const plugin = require("tailwindcss/plugin");
 
 const config: Config = {
-  plugins: [
-    plugin(function ({ addUtilities }: PluginAPI) {
-      const newUtilities = {
-        ".webkit-rounded": {
-          "-webkit-border-radius": "12px",
-          "border-radius": "12px",
-        },
-      };
-
-      addUtilities(newUtilities, {
-        respectPrefix: false,
-        respectImportant: false,
-      });
-    }),
-  ],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",

@@ -46,7 +46,7 @@ const Navbar = () => {
     <nav>
       <div
         style={{ WebkitBorderRadius: "12px" }}
-        className="bottom-[4%] z-[1000] flex fixed cst-md:hidden flex-col border border-[#151515] p-1 right-[2%] overflow-hidden  backdrop-blur-[2px] rounded-[12px]"
+        className="bottom-[4%] z-[1000] flex fixed cst-md:hidden flex-col border border-[#151515] p-1 right-[2%] overflow-hidden  backdrop-blur-[12px] rounded-[12px]"
       >
         <div
           className={`transition-height duration-1000 flex flex-col items-center gap-5 overflow-hidden`}
@@ -55,7 +55,7 @@ const Navbar = () => {
             {NavLinks.map((n, i) => (
               <Link key={n.id} href={n.path}>
                 <div
-                  className={`transition-all duration-300  ${
+                  className={`${
                     path === n.path
                       ? "bg-[#252525] backdrop-blur-sm text-[white]"
                       : "text-[#666666]"
