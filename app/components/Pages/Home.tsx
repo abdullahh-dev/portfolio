@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import CustomContainer from "../ui/Container";
 const HomePage = () => {
   return (
@@ -9,7 +9,7 @@ const HomePage = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="text-5xl sm:text-7xl text-white pl-2 font-medium tracking-tighter"
+          className="text-4xl sm:text-7xl text-white font-medium tracking-tighter"
         >
           Hi there, I&apos;m Muhammad Abdullah, a{" "}
           <span className="text-emerald-600">Frontend Engineer</span> who loves

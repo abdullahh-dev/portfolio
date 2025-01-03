@@ -25,7 +25,7 @@ experience.`;
         {words.map((word, index) => (
           <span
             key={index}
-            className={`transition-all text-[#666666] font-medium tracking-tighter text-2xl md:text-3xl leading-tight duration-75 linear ${
+            className={`transition-all text-[#666666] font-medium tracking-tighter text-xl md:text-3xl leading-tight duration-75 linear ${
               revealed && `text-white`
             }    `}
             style={{

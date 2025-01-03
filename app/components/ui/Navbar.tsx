@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { duration } from "@mui/material";
 const Navbar = () => {
   const path = usePathname();
   const NavLinks = [
