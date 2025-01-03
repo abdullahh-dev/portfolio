@@ -1,9 +1,10 @@
-"use client";
+import React from "react";
 import { motion } from "framer-motion";
-export default function Home() {
+import CustomContainer from "../ui/Container";
+const HomePage = () => {
   return (
-    <section className="h-screen flex items-center justify-center ">
-      <div className="p-2 max-w-[750px]">
+    <CustomContainer>
+      <div className="max-w-[800px] min-h-screen">
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -15,6 +16,8 @@ export default function Home() {
           creating beautiful websites.
         </motion.p>
       </div>
-    </section>
+    </CustomContainer>
   );
-}
+};
+
+export default HomePage;

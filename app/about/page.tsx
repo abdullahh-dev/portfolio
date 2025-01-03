@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import CustomContainer from "../components/ui/Container";
 
 const About = () => {
   const [revealed, setRevealed] = useState(false);
@@ -19,12 +20,12 @@ experience.`;
   const words = text.split("");
 
   return (
-    <section className="flex justify-center items-center h-screen">
-      <div className="max-w-[500px]">
+    <CustomContainer>
+      <div className="md:max-w-[700px]">
         {words.map((word, index) => (
           <span
             key={index}
-            className={`transition-all text-[#666666] font-medium tracking-tighter leading-tight duration-75 linear ${
+            className={`transition-all text-[#666666] font-medium tracking-tighter text-2xl md:text-3xl leading-tight duration-75 linear ${
               revealed && `text-white`
             }    `}
             style={{
@@ -36,7 +37,7 @@ experience.`;
         ))}
         <p className="tracking-tighter text-[#666666] leading-tight font-medium"></p>
       </div>
-    </section>
+    </CustomContainer>
   );
 };
 

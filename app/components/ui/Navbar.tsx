@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import { duration } from "@mui/material";
 const Navbar = () => {
   const path = usePathname();
   const NavLinks = [
@@ -28,6 +29,24 @@ const Navbar = () => {
       path: "/contact",
     },
   ];
+  const listVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: 70 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 1 },
+    },
+  };
 
   return (
     <nav>
@@ -38,6 +57,7 @@ const Navbar = () => {
         drag
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
         draggable
+        dragElastic={1}
         whileDrag={{ scale: 1.2, animation: "step-end" }}
         style={{ WebkitBorderRadius: "12px" }}
         className="bottom-[4%] z-[1000] flex fixed cst-md:hidden flex-col border border-[#151515] p-1 right-[2%] overflow-hidden  backdrop-blur-[12px] rounded-[12px]"
@@ -62,23 +82,29 @@ const Navbar = () => {
           </div>
         </div>
       </motion.div>
-      <ul className="hidden cst-md:flex flex-col fixed top-56 left-10">
+      <motion.ul
+        variants={listVariants}
+        initial="hidden"
+        animate="show"
+        className="hidden cst-md:flex flex-col fixed top-56  left-10"
+      >
         {NavLinks.map((n, i) => (
-          <li
+          <motion.li
+            variants={itemVariants}
             key={i}
-            className="hover:translate-x-2 duration-1000 transition-all ease-in-out"
+            whileHover={{ x: 10, transition: { duration: 1 } }}
           >
             <Link
-              className={`cursor-none ${
+              className={`px-2 ${
                 path === n.path ? "text-white font-medium" : "text-[#666666]"
               }`}
               href={n.path}
             >
               {n.name}
             </Link>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </nav>
   );
 };

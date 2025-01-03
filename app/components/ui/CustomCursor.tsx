@@ -1,53 +1,61 @@
-// components/CustomCursor.js
 "use client";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 const CustomCursor = () => {
+  const [mousePosition, setMousePosition] = useState<{
+    x: number;
+    y: number;
+  } | null>(null);
+  const [visible, setVisible] = useState(true);
+
   useEffect(() => {
-    const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-
     const handleMouseMove = (e: MouseEvent) => {
-      if (cursor) {
-        cursor.style.left = `${e.pageX}px`;
-        cursor.style.top = `${e.pageY}px`;
-      }
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
     };
 
-    const handleMouseDown = () => {
-      cursor?.classList.add("animate-pulse");
-    };
-
-    const handleMouseUp = () => {
-      cursor?.classList.remove("animate-pulse");
-    };
     const handleMouseLeave = () => {
-      cursor.style.display = "none";
+      setVisible(false);
     };
 
     const handleMouseEnter = () => {
-      cursor.style.display = "";
+      setVisible(true);
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mousedown", handleMouseDown);
-    document.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mousedown", handleMouseDown);
-      document.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      document.removeEventListener("mouseenter", handleMouseEnter);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
 
+  const variants = {
+    default: {
+      x: mousePosition?.x! - 15,
+      y: mousePosition?.y! - 15,
+      transition: {
+        type: "smooth",
+        duration: 0,
+      },
+    },
+  };
+
   return (
-    <div
-      className="custom-cursor hidden md:block fixed w-5 h-5 bg-[#ffffff]/5 backdrop-blur-sm border border-[#2a2a2a]  rounded-full z-50
-                duration-75"
-    ></div>
+    mousePosition && (
+      <motion.div
+        style={{ top: 0, left: 0 }}
+        variants={variants}
+        animate="default"
+        className={`${
+          visible ? "" : "hidden"
+        } fixed custom-cursor w-[30px] h-[30px] bg-emerald-100/25 backdrop-blur-sm rounded-full`}
+      />
+    )
   );
 };
 
