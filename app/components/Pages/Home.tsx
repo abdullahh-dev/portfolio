@@ -4,7 +4,7 @@ import CustomContainer from "../ui/Container";
 const HomePage = () => {
   return (
     <CustomContainer>
-      <div className="max-w-[800px] min-h-screen">
+      <div className="max-w-[800px] min-h-screen flex items-center justify-center">
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -12,8 +12,10 @@ const HomePage = () => {
           className="text-4xl sm:text-7xl text-white font-medium tracking-tighter"
         >
           Hi there, I&apos;m Muhammad Abdullah, a{" "}
-          <span className="text-emerald-600">Frontend Engineer</span> who loves
-          creating beautiful websites.
+          <motion.span className="text-emerald-600">
+            Frontend Engineer
+          </motion.span>{" "}
+          who loves creating beautiful websites.
         </motion.p>
       </div>
     </CustomContainer>
