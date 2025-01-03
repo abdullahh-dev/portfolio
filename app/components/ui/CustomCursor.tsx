@@ -53,7 +53,7 @@ const CustomCursor = () => {
         animate="default"
         className={`${
           visible ? "" : "hidden"
-        } fixed custom-cursor w-[30px] h-[30px] bg-emerald-100/25 backdrop-blur-sm rounded-full`}
+        } fixed custom-cursor opacity-0 md:opacity-100 w-[30px] h-[30px] bg-emerald-100/25 backdrop-blur-sm rounded-full`}
       />
     )
   );
